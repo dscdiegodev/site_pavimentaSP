@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Gestor - PavimentaSP</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">
+            <img src="/img/logoPavimenta.png" alt="PavimentaSP" class="logo">
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html">Início</a>
+            <a href="registrar.html">Registrar</a>
+            <a href="consultar.html">Consultar</a>
+            <a href="ocorrencias.html">Ocorrências</a>
+        </nav>
+        <button type="button" class="btn-entrar" id="btn-sair">Sair</button>
+    </header>
+
+    <main class="conteudo">
+        <div class="container">
+
+            <section class="secao-admin-topo">
+                <p class="subtitulo-topo">PAINEL ADMINISTRATIVO</p>
+                <h2 class="titulo-admin">Gestão de Ocorrências</h2>
+                <p class="descricao-admin">Gerencie, trie e atualize o status dos chamados de pavimentação urbana.</p>
+            </section>
+
+            <section class="resumo-indicadores">
+                <div class="card-indicador">
+                    <span class="rotulo-indicador">Total de Chamados</span>
+                    <strong class="valor-indicador" id="total-chamados">248</strong>
+                </div>
+                <div class="card-indicador indicador-pendente">
+                    <span class="rotulo-indicador">Em Análise</span>
+                    <strong class="valor-indicador" id="total-analise">42</strong>
+                </div>
+                <div class="card-indicador indicador-execucao">
+                    <span class="rotulo-indicador">Em Execução</span>
+                    <strong class="valor-indicador" id="total-execucao">18</strong>
+                </div>
+                <div class="card-indicador indicador-concluido">
+                    <span class="rotulo-indicador">Concluídos</span>
+                    <strong class="valor-indicador" id="total-concluidos">188</strong>
+                </div>
+            </section>
+
+            <section class="caixa-filtros-admin">
+                <form class="formulario-filtros-admin" id="form-filtros-admin">
+                    <div class="grupo-campo-admin campo-busca-admin">
+                        <label for="campo-pesquisa-admin">Buscar</label>
+                        <input type="text" id="campo-pesquisa-admin"
+                            placeholder="Buscar por protocolo, rua ou bairro...">
+                    </div>
+
+                    <div class="grupo-campo-admin">
+                        <label for="filtro-status-admin">Status</label>
+                        <select id="filtro-status-admin">
+                            <option value="todos">Todos</option>
+                            <option value="recebido">Recebido</option>
+                            <option value="em-analise">Em Análise</option>
+                            <option value="vistoria-agendada">Vistoria Agendada</option>
+                            <option value="em-execucao">Em Execução</option>
+                            <option value="concluido">Concluído</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-campo-admin">
+                        <label for="filtro-urgencia-admin">Urgência</label>
+                        <select id="filtro-urgencia-admin">
+                            <option value="todas">Todas</option>
+                            <option value="critica">Crítica</option>
+                            <option value="alta">Alta</option>
+                            <option value="media">Média</option>
+                            <option value="baixa">Baixa</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-campo-admin">
+                        <label for="filtro-regiao-admin">Região / Subprefeitura</label>
+                        <select id="filtro-regiao-admin">
+                            <option value="todas">Todas</option>
+                            <option value="campo-limpo">Campo Limpo</option>
+                            <option value="capela-do-socorro">Capela do Socorro</option>
+                            <option value="santo-amaro">Santo Amaro</option>
+                            <option value="m-boi-mirim">M'Boi Mirim</option>
+                        </select>
+                    </div>
+                </form>
+            </section>
+
+            <section class="caixa-tabela-admin">
+                <table class="tabela-admin" id="tabela-ocorrencias-admin">
+                    <thead>
+                        <tr>
+                            <th>Protocolo</th>
+                            <th>Data</th>
+                            <th>Local / Endereço</th>
+                            <th>Tipo de Problema</th>
+                            <th>Urgência</th>
+                            <th>Status Atual</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpo-tabela-admin">
+
+                        <tr>
+                            <td><strong class="codigo-protocolo">PSP-2026-1042</strong></td>
+                            <td>18/09/2026</td>
+                            <td>
+                                <span class="texto-endereco">Rua Luiz Gonzaga, 111</span>
+                                <small class="subprefeitura-texto">Campo Limpo</small>
+                            </td>
+                            <td>Buraco na via</td>
+                            <td><span class="etiqueta-urgencia critica">CRÍTICA</span></td>
+                            <td><span class="etiqueta-status em-execucao">Em Execução</span></td>
+                            <td>
+                                <button type="button" class="btn-acao-admin"
+                                    data-protocolo="PSP-2026-1042">Gerenciar</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong class="codigo-protocolo">PSP-2026-0985</strong></td>
+                            <td>24/09/2026</td>
+                            <td>
+                                <span class="texto-endereco">R. Fonseca Ramos - Petrópolis</span>
+                                <small class="subprefeitura-texto">Campo Limpo</small>
+                            </td>
+                            <td>Buraco na via</td>
+                            <td><span class="etiqueta-urgencia alta">ALTA</span></td>
+                            <td><span class="etiqueta-status vistoria">Vistoria Agendada</span></td>
+                            <td>
+                                <button type="button" class="btn-acao-admin"
+                                    data-protocolo="PSP-2026-0985">Gerenciar</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong class="codigo-protocolo">PSP-2026-0812</strong></td>
+                            <td>02/09/2026</td>
+                            <td>
+                                <span class="texto-endereco">Estrada do Campo Limpo, 222</span>
+                                <small class="subprefeitura-texto">Campo Limpo</small>
+                            </td>
+                            <td>Asfalto cedendo / afundamento</td>
+                            <td><span class="etiqueta-urgencia media">MÉDIA</span></td>
+                            <td><span class="etiqueta-status concluido">Concluído</span></td>
+                            <td>
+                                <button type="button" class="btn-acao-admin"
+                                    data-protocolo="PSP-2026-0812">Gerenciar</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong class="codigo-protocolo">PSP-2026-1107</strong></td>
+                            <td>05/10/2026</td>
+                            <td>
+                                <span class="texto-endereco">Rua Oliveira da Cruz, 450</span>
+                                <small class="subprefeitura-texto">Campo Limpo</small>
+                            </td>
+                            <td>Rachaduras no asfalto</td>
+                            <td><span class="etiqueta-urgencia baixa">BAIXA</span></td>
+                            <td><span class="etiqueta-status recebido">Recebido</span></td>
+                            <td>
+                                <button type="button" class="btn-acao-admin"
+                                    data-protocolo="PSP-2026-1107">Gerenciar</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="caixa-atualizacao-admin" id="painel-atualizacao-admin">
+                <h3 class="titulo-atualizacao">Atualizar Ocorrência: <span
+                        id="protocolo-selecionado">PSP-2026-1042</span></h3>
+                <form id="form-atualizar-status" class="formulario-atualizacao">
+                    <div class="grid-form-atualizacao">
+                        <div class="grupo-campo-admin">
+                            <label for="novo-status-admin">Novo Status</label>
+                            <select id="novo-status-admin">
+                                <option value="recebido">Recebido</option>
+                                <option value="em-analise">Em Análise</option>
+                                <option value="vistoria-agendada">Vistoria Agendada</option>
+                                <option value="em-execucao">Em Execução</option>
+                                <option value="concluido">Concluído</option>
+                            </select>
+                        </div>
+
+                        <div class="grupo-campo-admin">
+                            <label for="previsao-conclusao">Previsão de Conclusão</label>
+                            <input type="date" id="previsao-conclusao">
+                        </div>
+                    </div>
+
+                    <div class="grupo-campo-admin">
+                        <label for="observacoes-gestao">Observações Técnicas / Despacho</label>
+                        <textarea id="observacoes-gestao" rows="4"
+                            placeholder="Digite as observações da equipe técnica ou ordem de serviço..."></textarea>
+                    </div>
+
+                    <div class="grupo-botoes-admin">
+                        <button type="button" class="btn-cancelar-admin" id="btn-cancelar-atualizacao">Cancelar</button>
+                        <button type="submit" class="btn-salvar-admin" id="btn-salvar-atualizacao">Salvar
+                            Alterações</button>
+                    </div>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="bloco-rodape">
+            <div class="a">
+                <a href="index.html"><img src="../img/logoPavimenta.png" alt="Logo PavimentaSP" class="logo"></a>
+            </div>
+
+            <p>Proposta de plataforma para registrar e acompanhar problemas de pavimentação urbana.</p>
+        </div>
+
+        <div class="bloco-rodape">
+            <h4>Protótipo acadêmico</h4>
+
+            <p>Projeto de Análise e Desenvolvimento de Sistemas - 1º Semestre. Dados fictícios armazenados no navegador.
+            </p>
+        </div>
+
+        <div class="bloco-rodape">
+            <h4>Aviso</h4>
+
+            <p>Este não é um canal oficial da Prefeitura de São Paulo. Para solicitações reais, utilize o SP156.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

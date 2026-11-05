@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/registrar.css">
+    <title>PavimentaSP | Registrar Ocorrência</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a href="index.html"><img src="../img/logoPavimenta.png" alt="Logo PavimentaSP" class="logo"></a>
+
+        <nav class="nav-menu">
+            <a href="index.html">Início</a>
+            <a href="registrar.html">Registrar</a>
+            <a href="consultar.html">Consultar</a>
+            <a href="ocorrencias.html">Ocorrências</a>
+        </nav>
+
+        <button id="btnEntrar" class="btn-entrar">Entrar</button>
+    </header>
+
+    <main class="conteudo-registrar">
+        <div class="header-registrar">
+            <span class="subtitulo-topo">NOVA OCORRÊNCIA</span>
+            <h1>Registrar problema de pavimentação</h1>
+            <p>Preencha os dados abaixo. Ao final, você receberá um número de protocolo.</p>
+        </div>
+
+        <form id="formRegistrar" class="form-container">
+            <section class="card-passo">
+                <div class="passo-header">
+                    <span class="numero-passo">1</span>
+                    <h2>Onde fica o problema?</h2>
+                </div>
+
+                <div class="form-group full-width">
+                    <div class="label-with-link">
+                        <label for="endereco">Endereço *</label>
+                        <a href="#" class="btn-localizacao">⊕ Usar minha localização</a>
+                    </div>
+                    <input type="text" id="endereco" placeholder="Rua, número - Bairro" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="subprefeitura">Subprefeitura *</label>
+                        <select id="subprefeitura" required>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="se">Sé</option>
+                            <option value="pinheiros">Pinheiros</option>
+                            <option value="lapa">Lapa</option>
+                            <option value="mooca">Mooca</option>
+                            <option value="santo-amaro">Santo Amaro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="referencia">Ponto de referência</label>
+                        <input type="text" id="referencia" placeholder="Opcional">
+                    </div>
+                </div>
+            </section>
+
+            <section class="card-passo">
+                <div class="passo-header">
+                    <span class="numero-passo">2</span>
+                    <h2>Qual é o problema?</h2>
+                </div>
+
+                <div class="grid-opcoes">
+                    <label class="opcao-card">
+                        <input type="radio" name="tipo_problema" value="buraco">
+                        <span>Buraco na via</span>
+                    </label>
+                    <label class="opcao-card">
+                        <input type="radio" name="tipo_problema" value="asfalto_cedendo">
+                        <span>Asfalto cedendo / afundamento</span>
+                    </label>
+                    <label class="opcao-card">
+                        <input type="radio" name="tipo_problema" value="rachaduras">
+                        <span>Rachaduras no asfalto</span>
+                    </label>
+                    <label class="opcao-card">
+                        <input type="radio" name="tipo_problema" value="bueiro">
+                        <span>Bueiro danificado / sem tampa</span>
+                    </label>
+                    <label class="opcao-card">
+                        <input type="radio" name="tipo_problema" value="sem_pavimentacao">
+                        <span>Rua sem pavimentação</span>
+                    </label>
+                    <label class="opcao-card">
+                        <input type="radio" name="tipo_problema" value="calcada">
+                        <span>Calçada danificada</span>
+                    </label>
+                </div>
+
+                <div class="form-group full-width margin-top">
+                    <label for="descricao">Descrição *</label>
+                    <textarea id="descricao" rows="4"
+                        placeholder="Ex.: buraco grande na faixa da direita, cerca de 1 metro de largura"
+                        required></textarea>
+                </div>
+            </section>
+
+            <section class="card-passo">
+                <div class="passo-header">
+                    <span class="numero-passo">3</span>
+                    <h2>Qual a urgência?</h2>
+                </div>
+
+                <div class="grid-urgencia">
+                    <label class="urgencia-card">
+                        <input type="radio" name="urgencia" value="baixa">
+                        <div class="urgencia-info">
+                            <strong>Baixa</strong>
+                            <small>Sem risco imediato</small>
+                        </div>
+                    </label>
+                    <label class="urgencia-card">
+                        <input type="radio" name="urgencia" value="media">
+                        <div class="urgencia-info">
+                            <strong>Média</strong>
+                            <small>Incomoda o trânsito</small>
+                        </div>
+                    </label>
+                    <label class="urgencia-card">
+                        <input type="radio" name="urgencia" value="alta">
+                        <div class="urgencia-info">
+                            <strong>Alta</strong>
+                            <small>Risco de acidente</small>
+                        </div>
+                    </label>
+                    <label class="urgencia-card">
+                        <input type="radio" name="urgencia" value="critica">
+                        <div class="urgencia-info">
+                            <strong>Crítica</strong>
+                            <small>Perigo grave agora</small>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+            <section class="card-passo">
+                <div class="passo-header">
+                    <span class="numero-passo">4</span>
+                    <h2>Foto do local (opcional)</h2>
+                </div>
+
+                <div class="upload-box" id="uploadArea">
+                    <input type="file" id="inputFoto" accept="image/*" class="input-file">
+                    <div class="upload-content">
+                        <img src="https://img.icons8.com/ios/50/4a5568/add-image.png" alt="Upload Icon"
+                            class="upload-icon">
+                        <p class="upload-title">Clique para escolher uma foto</p>
+                        <p class="upload-subtitle">JPG ou PNG — a imagem fica apenas no seu navegador</p>
+                    </div>
+                </div>
+
+                <div class="exemplos-fotos">
+                    <p>Ou use uma foto de exemplo:</p>
+                    <div class="thumbs">
+                        <img src="../img/img1.jpeg" alt="Exemplo 1" class="thumb-img">
+                        <img src="../img/img2.jpg" alt="Exemplo 2" class="thumb-img">
+                        <img src="../img/img5.jpeg" alt="Exemplo 3" class="thumb-img">
+                        <img src="../img/img4.jpeg" alt="Exemplo 4" class="thumb-img">
+                    </div>
+                </div>
+            </section>
+
+            <button type="submit" class="btn-enviar-ocorrencia">
+                <span>✈</span> Enviar ocorrência
+            </button>
+        </form>
+    </main>
+
+    <footer class="rodape">
+        <div class="bloco-rodape">
+            <div class="a">
+                <a href="index.html"><img src="../img/logoPavimenta.png" alt="Logo PavimentaSP" class="logo"></a>
+            </div>
+            <p>Proposta de plataforma para registrar e acompanhar problemas de pavimentação urbana.</p>
+        </div>
+
+        <div class="bloco-rodape">
+            <h4>Protótipo acadêmico</h4>
+            <p>Projeto de Análise e Desenvolvimento de Sistemas - 1º Semestre. Dados fictícios armazenados no navegador.
+            </p>
+        </div>
+
+        <div class="bloco-rodape">
+            <h4>Aviso</h4>
+            <p>Este não é um canal oficial da Prefeitura de São Paulo. Para solicitações reais, utilize o SP156.</p>
+        </div>
+    </footer>
+
+    <script src="../js/registrar.js"></script>
+</body>
+
+</html>

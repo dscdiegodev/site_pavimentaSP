@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>PavimentaSP | Entrar e Cadastrar</title>
+</head>
+
+<body>
+    <header class="cabecalho-simples">
+        <a href="index.html">
+            <img src="../img/logoPavimenta.png" alt="Logo PavimentaSP" class="logo">
+        </a>
+    </header>
+
+    <main class="conteudo-login">
+        <div class="cabecalho-login">
+            <span class="subtitulo-topo">ÁREA DO CIDADÃO</span>
+            <h1>Acesse ou Crie sua Conta</h1>
+            <p>Entre com seus dados ou cadastre-se para acompanhar e registrar ocorrências na sua cidade.</p>
+        </div>
+
+        <div class="grade-autenticacao">
+            <section class="cartao-autenticacao">
+                <div class="cabecalho-cartao">
+                    <span class="icone-passo">➔</span>
+                    <h2>Já tenho conta</h2>
+                </div>
+
+                <form id="formularioLogin" class="form-conteudo">
+                    <div class="campo-grupo">
+                        <label for="loginEmail">E-mail ou Usuário *</label>
+                        <input type="text" id="loginEmail" placeholder="seuemail@exemplo.com" required>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <div class="linha-rotulo-link">
+                            <label for="loginSenha">Senha *</label>
+                            <a href="#" class="link-esqueci">Esqueceu a senha?</a>
+                        </div>
+                        <input type="password" id="loginSenha" placeholder="Digite sua senha" required>
+                    </div>
+
+                    <button type="submit" class="botao-acao">
+                        <span>➔</span> Entrar
+                    </button>
+                </form>
+            </section>
+
+            <section class="cartao-autenticacao">
+                <div class="cabecalho-cartao">
+                    <span class="icone-passo">+</span>
+                    <h2>Criar nova conta</h2>
+                </div>
+
+                <form id="formularioCadastro" class="form-conteudo">
+                    <div class="campo-grupo">
+                        <label for="cadastroNome">Nome Completo *</label>
+                        <input type="text" id="cadastroNome" placeholder="Seu nome completo" required>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="cadastroEmail">E-mail *</label>
+                        <input type="email" id="cadastroEmail" placeholder="seuemail@exemplo.com" required>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="cadastroSenha">Senha *</label>
+                        <input type="password" id="cadastroSenha" placeholder="Crie uma senha segura" required>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="cadastroConfirmarSenha">Confirmar Senha *</label>
+                        <input type="password" id="cadastroConfirmarSenha" placeholder="Repita a senha" required>
+                    </div>
+
+                    <button type="submit" class="botao-acao">
+                        <span>✓</span> Cadastrar
+                    </button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script src="../js/login.js"></script>
+</body>
+
+</html>

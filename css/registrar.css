@@ -1,0 +1,315 @@
+.conteudo-registrar {
+  width: 100%;
+  max-width: 760px;
+  margin: 40px auto 160px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.header-registrar {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.subtitulo-topo {
+  color: var(--accent-orange);
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.header-registrar h1 {
+  color: var(--primary-dark);
+  font-size: 2rem;
+  margin: 10px 0 8px 0;
+  font-weight: 800;
+}
+
+.header-registrar p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card-passo {
+  background-color: var(--bg-white);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px var(--shadow-card);
+  border: 1px solid #e2e8f0;
+}
+
+.passo-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.numero-passo {
+  background-color: var(--primary-dark);
+  color: var(--bg-white);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.passo-header h2 {
+  font-size: 1.15rem;
+  color: var(--primary-dark);
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Campos de Formulário */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.form-group.full-width {
+  width: 100%;
+}
+
+.form-group.margin-top {
+  margin-top: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.label-with-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+}
+
+.btn-localizacao {
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.btn-localizacao:hover {
+  text-decoration: underline;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  color: #334155;
+  outline: none;
+  background-color: var(--bg-white);
+  font-family: inherit;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.grid-opcoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.opcao-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  padding: 12px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.opcao-card:hover {
+  border-color: var(--primary-color);
+}
+
+.opcao-card input[type="radio"] {
+  display: none;
+}
+
+.opcao-card span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.opcao-card:has(input:checked) {
+  border-color: var(--primary-dark);
+  background-color: #f0f4ff;
+}
+
+.grid-urgencia {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.urgencia-card {
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.urgencia-card input[type="radio"] {
+  display: none;
+}
+
+.urgencia-info strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+  margin-bottom: 2px;
+}
+
+.urgencia-info small {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.urgencia-card:has(input:checked) {
+  border-color: var(--primary-dark);
+  background-color: #f0f4ff;
+}
+
+.upload-box {
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  background-color: #f8fafc;
+  transition: border-color 0.2s ease;
+}
+
+.upload-box:hover {
+  border-color: var(--primary-dark);
+}
+
+.input-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+  opacity: 0.6;
+}
+
+.upload-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.upload-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 4px 0 0 0;
+}
+
+.exemplos-fotos {
+  margin-top: 16px;
+}
+
+.exemplos-fotos p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.thumbs {
+  display: flex;
+  gap: 8px;
+}
+
+.thumb-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-enviar-ocorrencia {
+  width: 100%;
+  background-color: var(--primary-dark);
+  color: var(--bg-white);
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-enviar-ocorrencia:hover {
+  background-color: var(--primary-color);
+}
+
+/* Responsividade para Telas Menores */
+@media (max-width: 640px) {
+  .form-row,
+  .grid-opcoes,
+  .grid-urgencia {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+}

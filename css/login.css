@@ -1,0 +1,201 @@
+:root {
+    --primary-dark: #0f172a;
+    --primary-color: #1e3a8a;
+    --accent-orange: #ea580c;
+    --text-muted: #64748b;
+    --bg-body: #f8fafc;
+    --bg-card: #ffffff;
+    --shadow-card: rgba(0, 0, 0, 0.05);
+    --border-color: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--primary-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalho-simples {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px 10px 20px;
+}
+
+.cabecalho-simples .logo {
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+.conteudo-login {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto 60px auto;
+    padding: 0 20px;
+}
+
+.cabecalho-login {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.subtitulo-topo {
+    color: var(--accent-orange);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.cabecalho-login h1 {
+    color: var(--primary-dark);
+    font-size: 2rem;
+    margin: 8px 0;
+    font-weight: 800;
+}
+
+.cabecalho-login p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.grade-autenticacao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Estilo do Card (idêntico ao card-passo) */
+.cartao-autenticacao {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 4px 12px var(--shadow-card);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalho-cartao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.icone-passo {
+    background-color: var(--primary-dark);
+    color: var(--bg-card);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.cabecalho-cartao h2 {
+    font-size: 1.15rem;
+    color: var(--primary-dark);
+    font-weight: bold;
+}
+
+.form-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.linha-rotulo-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.link-esqueci {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.link-esqueci:hover {
+    text-decoration: underline;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    color: #334155;
+    outline: none;
+    background-color: var(--bg-card);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.1);
+}
+
+.botao-acao {
+    width: 100%;
+    background-color: var(--primary-dark);
+    color: var(--bg-card);
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 14px;
+}
+
+.botao-acao:hover {
+    background-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .grade-autenticacao {
+        grid-template-columns: 1fr;
+    }
+}

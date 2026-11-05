@@ -1,0 +1,229 @@
+.conteudo {
+    width: 100%;
+    max-width: 760px;
+    margin: 40px auto 180px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.caixa-titulo-pagina {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.sub-titulo {
+    color: var(--accent-orange);
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.titulo-principal-pagina {
+    color: var(--primary-dark);
+    font-size: 2rem;
+    margin: 8px 0 0 0;
+    font-weight: 800;
+}
+
+.cartao-formulario {
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    padding: 28px;
+    box-shadow: 0 2px 8px var(--shadow-card);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 24px;
+}
+
+.grupo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.grupo-margem-inferior {
+    margin-bottom: 16px;
+}
+
+.grupo-formulario label {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+}
+
+.texto-exemplo {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.linha-consulta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.linha-consulta input[type="text"] {
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    color: #334155;
+    outline: none;
+    background-color: var(--bg-white);
+    transition: border-color 0.2s ease;
+    font-family: inherit;
+}
+
+.linha-consulta input[type="text"]:focus {
+    border-color: var(--primary-color);
+}
+
+.botao-buscar {
+    background-color: var(--primary-dark);
+    color: var(--bg-white);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.botao-buscar:hover {
+    background-color: var(--primary-color);
+}
+
+/* Estilos da Tabela de Resultado da Consulta */
+.caixa-resultado-consulta {
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px var(--shadow-card);
+    border: 1px solid #e2e8f0;
+    overflow-x: auto;
+}
+
+.titulo-resultado {
+    color: var(--primary-dark);
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.tabela-resultado-consulta {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.85rem;
+}
+
+.tabela-resultado-consulta thead tr {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+}
+
+.tabela-resultado-consulta th,
+.tabela-resultado-consulta td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.codigo-protocolo-tabela {
+    color: var(--primary-dark);
+}
+
+/* Etiquetas auxiliares para a tabela */
+.etiqueta-urgencia-tabela {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--bg-white);
+}
+
+.etiqueta-urgencia-tabela.critica {
+    background-color: #d32f2f;
+}
+
+.etiqueta-status-tabela {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.etiqueta-status-tabela.em-execucao {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.menu-navegacao {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-navegacao a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.menu-navegacao a:hover {
+    color: var(--bg-white);
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+.botao-entrar {
+    background-color: var(--bg-white);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.botao-entrar:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+}
+
+.logotipo-rodape {
+    background-color: var(--bg-white);
+    width: 110px;
+}
+
+.logotipo-rodape .logo {
+    width: 110px;
+    height: 30px;
+}
+
+@media (max-width: 600px) {
+    .linha-consulta {
+        flex-direction: column;
+    }
+
+    .linha-consulta input[type="text"],
+    .botao-buscar {
+        width: 100%;
+    }
+}

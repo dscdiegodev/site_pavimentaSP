@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/consultar.css">
+    <title>PavimentaSP | Consultar</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="index.html"><img src="../img/logoPavimenta.png" alt="Logo PavimentaSP" class="logo"></a>
+
+        <nav class="menu-navegacao">
+            <a href="index.html">Início</a>
+            <a href="registrar.html">Registrar</a>
+            <a href="consultar.html">Consultar</a>
+            <a href="ocorrencias.html">Ocorrências</a>
+        </nav>
+
+        <button class="botao-entrar">Entrar</button>
+    </header>
+
+    <main class="conteudo">
+        <div class="caixa-titulo-pagina">
+            <span class="sub-titulo">ACOMPANHAMENTO</span>
+            <h1 class="titulo-principal-pagina">Consultar ocorrência</h1>
+        </div>
+
+        <div class="cartao-formulario">
+            <div class="grupo-formulario grupo-margem-inferior">
+                <label for="protocolo">Digite o número do protocolo recebido no registro</label>
+                <span class="texto-exemplo">Ex.: PSP-2026-1042</span>
+            </div>
+
+            <div class="linha-consulta">
+                <input type="text" id="protocolo" placeholder="PSP-2026-0000">
+                <button type="button" class="botao-buscar" id="botao-buscar-protocolo">
+                    🔍 Buscar
+                </button>
+            </div>
+        </div>
+
+        <!-- Exemplo de Tabela de Resultado da Consulta por Protocolo -->
+        <div class="caixa-resultado-consulta" id="caixa-resultado-consulta">
+            <h3 class="titulo-resultado">Resultado da Busca</h3>
+            <table class="tabela-resultado-consulta" id="tabela-resultado-consulta">
+                <thead>
+                    <tr>
+                        <th>Protocolo</th>
+                        <th>Data</th>
+                        <th>Endereço</th>
+                        <th>Problema</th>
+                        <th>Urgência</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong class="codigo-protocolo-tabela">PSP-2026-1042</strong></td>
+                        <td>18/09/2026</td>
+                        <td>Rua Luiz Gonzaga, 111 (Campo Limpo)</td>
+                        <td>Buraco na via</td>
+                        <td><span class="etiqueta-urgencia-tabela critica">Crítica</span></td>
+                        <td><span class="etiqueta-status-tabela em-execucao">Em Execução</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="bloco-rodape">
+            <div class="logotipo-rodape">
+                <a href="index.html"><img src="../img/logoPavimenta.png" alt="Logo PavimentaSP" class="logo"></a>
+            </div>
+            <p>Proposta de plataforma para registrar e acompanhar problemas de pavimentação urbana.</p>
+        </div>
+
+        <div class="bloco-rodape">
+            <h4>Protótipo acadêmico</h4>
+            <p>Projeto de Análise e Desenvolvimento de Sistemas - 1º Semestre. Dados fictícios armazenados no navegador.</p>
+        </div>
+
+        <div class="bloco-rodape">
+            <h4>Aviso</h4>
+            <p>Este não é um canal oficial da Prefeitura de São Paulo. Para solicitações reais, utilize o SP156.</p>
+        </div>
+    </footer>
+
+    <script src="../js/consultar.js"></script>
+</body>
+</html>

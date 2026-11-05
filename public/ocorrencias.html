@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/ocorrencias.css">
+    <title>PavimentaSP | Ocorrências Registradas</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a href="index.html"><img src="../img/logoPavimenta.png" alt="Logo PavimentaSP" class="logo"></a>
+
+        <nav class="nav-menu">
+            <a href="index.html">Início</a>
+            <a href="registrar.html">Registrar</a>
+            <a href="consultar.html">Consultar</a>
+            <a href="ocorrencias.html">Ocorrências</a>
+        </nav>
+
+        <button id="btnEntrar" class="btn-entrar">Entrar</button>
+    </header>
+
+    <main class="conteudo-ocorrencias">
+        <div class="header-ocorrencias">
+            <span class="subtitulo-topo">TRANSPARÊNCIA</span>
+            <h1>Ocorrências registradas</h1>
+            <p>Visão resumida de todos os registros feitos na plataforma.</p>
+        </div>
+
+        <div class="barra-filtros">
+            <div class="input-busca-wrapper">
+                <span class="icone-busca">🔍</span>
+                <input type="text" id="buscaEndereco" placeholder="Buscar endereço ou protocolo">
+            </div>
+
+            <div class="select-wrapper">
+                <select id="filtroStatus">
+                    <option value="">Status: todos</option>
+                    <option value="recebido">Recebido</option>
+                    <option value="em_analise">Em Análise</option>
+                    <option value="vistoria">Vistoria Agendada</option>
+                    <option value="em_execucao">Em Execução</option>
+                    <option value="concluido">Concluído</option>
+                </select>
+            </div>
+
+            <div class="select-wrapper">
+                <select id="filtroUrgencia">
+                    <option value="">Urgência: todos</option>
+                    <option value="baixa">Baixa</option>
+                    <option value="media">Média</option>
+                    <option value="alta">Alta</option>
+                    <option value="critica">Crítica</option>
+                </select>
+            </div>
+
+            <div class="select-wrapper">
+                <select id="filtroTipo">
+                    <option value="">Tipo: todos</option>
+                    <option value="buraco">Buraco na via</option>
+                    <option value="asfalto_cedendo">Asfalto cedendo / afundamento</option>
+                    <option value="rachaduras">Rachaduras no asfalto</option>
+                    <option value="bueiro">Bueiro danificado / sem tampa</option>
+                    <option value="calcada">Calçada danificada</option>
+                </select>
+            </div>
+
+            <div class="select-wrapper">
+                <select id="filtroRegiao">
+                    <option value="">Região: todos</option>
+                    <option value="campo_limpo">Campo Limpo</option>
+                    <option value="vila_andrade">Vila Andrade</option>
+                    <option value="capao_redondo">Capão Redondo</option>
+                    <option value="jardim_sao_luis">Jardim São Luís</option>
+                    <option value="santo_amaro">Santo Amaro</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="contador-resultados">
+            <p>6 ocorrência(s) encontrada(s)</p>
+        </div>
+
+        <div class="grid-ocorrencias">
+            <article class="card-ocorrencia">
+                <div class="card-imagem">
+                    <img src="../img/img1.jpeg">
+                    <span class="badge-urgencia critica">CRÍTICA</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-top">
+                        <span class="protocolo">PSP-2026-1042</span>
+                        <span class="badge-status em-execucao">• Em Execução</span>
+                    </div>
+                    <h3>Buraco na via</h3>
+                    <p class="endereco">(Endereço fictício) Rua Luiz Gonzaga, altura do nº 111</p>
+                    <p class="data-regiao">📅 18/09/2026 · Campo Limpo</p>
+                </div>
+            </article>
+
+            <article class="card-ocorrencia">
+                <div class="card-imagem">
+                    <img src="../img/img2.jpg">
+                    <span class="badge-urgencia alta">ALTA</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-top">
+                        <span class="protocolo">PSP-2026-0985</span>
+                        <span class="badge-status vistoria">• Vistoria Agendada</span>
+                    </div>
+                    <h3>Buraco na via</h3>
+                    <p class="endereco">(Endereço fictício) R. Fonceca Remos - Petrópolis</p>
+                    <p class="data-regiao">📅 24/09/2026 · Campo Limpo</p>
+                </div>
+            </article>
+
+            <article class="card-ocorrencia">
+                <div class="card-imagem">
+                    <img src="../img/img3.jpeg"
+                        alt="Asfalto cedendo">
+                    <span class="badge-urgencia media">MÉDIA</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-top">
+                        <span class="protocolo">PSP-2026-0812</span>
+                        <span class="badge-status concluido">• Concluído</span>
+                    </div>
+                    <h3>Asfalto cedendo / afundamento</h3>
+                    <p class="endereco">(Endereço fictício) Estrada do Campo Limpo, altura do nº 222</p>
+                    <p class="data-regiao">📅 02/09/2026 · Campo Limpo</p>
+                </div>
+            </article>
+
+            <article class="card-ocorrencia">
+                <div class="card-imagem">
+                    <img src="../img/img4.jpeg"
+                        alt="Rachaduras no asfalto">
+                    <span class="badge-urgencia baixa">BAIXA</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-top">
+                        <span class="protocolo">PSP-2026-1107</span>
+                        <span class="badge-status recebido">• Recebido</span>
+                    </div>
+                    <h3>Rachaduras no asfalto</h3>
+                    <p class="endereco">(Endereço fictício) Rua Oliveira da Cruz, 450 - Campo Limpo</p>
+                    <p class="data-regiao">📅 05/10/2026 · Campo Limpo</p>
+                </div>
+            </article>
+
+            <article class="card-ocorrencia">
+                <div class="card-imagem">
+                    <img src="../img/img5.jpeg"
+                        alt="Buraco na via">
+                    <span class="buraco alta-urgência">ALTA</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-top">
+                        <span class="protocolo">PSP-2026-1065</span>
+                        <span class="badge-status em-analise">• Em Análise</span>
+                    </div>
+                    <h3>Buraco na via</h3>
+                    <p class="endereco">(Endereço fictício) Av Carlos Lacerda, 5555 - Campo Limpo</p>
+                    <p class="data-regiao">📅 01/10/2026 · Campo Limpo</p>
+                </div>
+            </article>
+
+            <article class="card-ocorrencia">
+                <div class="card-imagem">
+                    <img src="../img/img6.jpeg"
+                        alt="Buraco Tampado">
+                    <span class="badge-urgencia media">MÉDIA</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-top">
+                        <span class="protocolo">PSP-2026-0933</span>
+                        <span class="badge-status concluido">• Concluído</span>
+                    </div>
+                    <h3>Calçada danificada</h3>
+                    <p class="endereco">(Endereço fictício) Rua Professor Luiz Farya, 190 - Campo Limpo</p>
+                    <p class="data-regiao">📅 28/08/2026 · Campo Limpo</p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="bloco-rodape">
+            <div class="a">
+                <a href="index.html"><img src="../img/logoPavimenta.png" alt="Logo PavimentaSP" class="logo"></a>
+            </div>
+            <p>Proposta de plataforma para registrar e acompanhar problemas de pavimentação urbana.</p>
+        </div>
+
+        <div class="bloco-rodape">
+            <h4>Protótipo acadêmico</h4>
+            <p>Projeto de Análise e Desenvolvimento de Sistemas - 1º Semestre. Dados fictícios armazenados no navegador.
+            </p>
+        </div>
+
+        <div class="bloco-rodape">
+            <h4>Aviso</h4>
+            <p>Este não é um canal oficial da Prefeitura de São Paulo. Para solicitações reais, utilize o SP156.</p>
+        </div>
+    </footer>
+
+    <script src="../js/ocorrencias.js"></script>
+</body>
+
+</html>
