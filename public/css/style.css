@@ -11,7 +11,7 @@
   --bg-icon: #afafaf;
   --text-muted: #555555;
 
-  --overlay-dark: rgba(26, 31, 93, 0.4);
+  --overlay-dark: rgba(26, 31, 93, 0.6);
   --overlay-white-low: rgba(255, 255, 255, 0.2);
   --overlay-white-mid: rgba(255, 255, 255, 0.4);
   --overlay-option: rgba(85, 85, 85, 0.3);
@@ -22,9 +22,10 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  margin: 0 0 100px 0;
+  margin: 0 0 120px 0;
   padding: 0;
   background-color: var(--bg-main);
+  overflow-x: hidden;
 }
 
 .cabecalho {
@@ -32,7 +33,8 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: var(--bg-white);
-  padding: 10px;
+  padding: 10px 20px;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -42,7 +44,8 @@ body {
 
 .nav-menu {
   display: flex;
-  gap: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .nav-menu a {
@@ -50,10 +53,10 @@ body {
   color: var(--primary-color);
   font-weight: bold;
   height: 40px;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 10px;
 }
 
 .nav-menu a:hover {
@@ -66,7 +69,7 @@ body {
   background-color: var(--bg-white);
   color: var(--primary-color);
   border: 2px solid var(--primary-color);
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
@@ -86,6 +89,7 @@ body {
   border-radius: 6px;
   cursor: pointer;
   margin-right: 10px;
+  margin-bottom: 10px;
   border: none;
   transition: background 0.3s ease;
 }
@@ -116,7 +120,7 @@ body {
 .box-title {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 350px;
   overflow: hidden;
   background-color: var(--primary-color);
 }
@@ -132,26 +136,29 @@ body {
 .box-textos {
   position: absolute;
   top: 50%;
-  left: 20%;
+  left: 15%;
   transform: translateY(-50%);
   max-width: 600px;
+  width: 70%;
   z-index: 2;
   color: var(--bg-white);
   background: var(--overlay-dark);
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .atencao-title {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
   color: var(--accent-yellow);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   text-shadow: 1px 1px 3px var(--shadow-dark);
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   line-height: 1.2;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   text-shadow: 2px 2px 4px var(--shadow-dark);
 }
 
@@ -170,13 +177,13 @@ body {
 .container-cartoes {
   display: flex;
   flex-direction: column;
-  margin: 50px 0;
+  margin: 40px 0;
   width: 100%;
 }
 
 .cartoes-textos {
   text-align: left;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .subtitulo-topo {
@@ -188,7 +195,7 @@ body {
 
 .cartoes-textos h3 {
   color: var(--primary-dark);
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 10px 0 8px 0;
   font-weight: 800;
 }
@@ -196,7 +203,7 @@ body {
 .cartoes {
   display: flex;
   justify-content: space-around;
-  gap: 10px;
+  gap: 15px;
   width: 100%;
   flex-wrap: wrap;
 }
@@ -205,9 +212,9 @@ body {
   background-color: var(--bg-white);
   border-radius: 8px;
   box-shadow: 0 4px 6px var(--shadow-card);
-  padding: 10px;
+  padding: 15px;
   text-align: left;
-  min-width: 200px;
+  min-width: 220px;
   flex: 1;
 }
 
@@ -227,7 +234,7 @@ body {
   border-radius: 5px;
   width: 25px;
   height: 25px;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .cartoes .cartao p {
@@ -243,13 +250,14 @@ body {
   flex-wrap: wrap;
   background-color: var(--bg-black);
   border-radius: 8px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 
 .grupo-box .content {
   flex: 1;
   padding: 22px;
   color: var(--bg-white);
+  min-width: 280px;
 }
 
 .content h4 {
@@ -265,12 +273,14 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .opcoes div {
   margin: 10px 0;
   background-color: var(--overlay-option);
-  padding: 5px;
+  padding: 8px;
   border-radius: 8px;
 }
 
@@ -292,11 +302,14 @@ body {
   text-align: left;
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   font-size: 12px;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding: 10px 20%;
   box-sizing: border-box;
+  z-index: 100;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .rodape .a {
@@ -310,6 +323,106 @@ body {
 }
 
 .rodape .bloco-rodape {
-  margin: 10px;
-  width: 400px;
+  margin: 5px 10px;
+  max-width: 300px;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 10%;
+  }
+
+  .rodape {
+    padding: 10px 10%;
+  }
+
+  .box-textos {
+    left: 8%;
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cabecalho {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .nav-menu {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .container {
+    padding: 0 5%;
+  }
+
+  .box-textos {
+    left: 5%;
+    width: 90%;
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .bloco-content {
+    grid-template-columns: 1fr;
+  }
+
+  .rodape {
+    flex-direction: column;
+    position: relative;
+    padding: 20px 5%;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .rodape .bloco-rodape {
+    width: 100%;
+    max-width: 100%;
+    margin: 5px 0;
+  }
+
+  .rodape .a {
+    margin: 0 auto;
+  }
+
+  body {
+    margin-bottom: 0; /* Remove a margem fixa do rodapé se ele virar relativo no mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .nav-menu a {
+    width: 100%;
+    height: 35px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .cartoes .cartao {
+    min-width: 100%;
+  }
+
+  .btn-registrar, .btn-consulta {
+    width: 100%;
+    margin-right: 0;
+  }
 }
